@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RedisCacheWebAPIDemo.Core\RedisCacheWebAPIDemo.Core.csproj" />
     <ProjectReference Include="..\RedisCacheWebAPIDemo.Data\RedisCacheWebAPIDemo.Data.csproj" />
   </ItemGroup>
 

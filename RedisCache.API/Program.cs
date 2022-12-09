@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using RedisCacheWebAPIDemo.Core;
+using RedisCacheWebAPIDemo.Core.contracts;
 using RedisCacheWebAPIDemo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("driverDb")));
+builder.Services.AddScoped<ICacheReaderService,CacheReaderService>();
+
 
 var app = builder.Build();
 
